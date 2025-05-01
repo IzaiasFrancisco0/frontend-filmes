@@ -8,7 +8,7 @@ const Container = ({ categoriaSelecionada, pesquisa, setFavoritos, setFavoritosC
     useEffect(() => {
         const mostrarFilmes = async () => {
             try {
-                const response = await axios.get('https://api-filmes-ztnz.onrender.com/filmes')
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/filmes`)
                 setMovies(response.data)
                 console.log(response)
             } catch (error) {
